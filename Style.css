@@ -82,6 +82,7 @@
         }
         
         .contenedor-ropa-hombre {
+            width: 100%;
             display: flex;
             justify-content: space-evenly;
         }
@@ -184,7 +185,7 @@
             align-items: center;
             justify-content: space-evenly;
             border-radius: 5px;
-            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.671);
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
         }
         
         .cards .card img {
@@ -214,7 +215,7 @@
         .contenedor-con {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex;
         }
         
         .contacto-cont {
@@ -224,6 +225,8 @@
         
         .contacto-cont img {
             width: 10%;
+            justify-content: space-evenly;
+            align-items: baseline;
         }
         
         .contacto-cont h3 {
