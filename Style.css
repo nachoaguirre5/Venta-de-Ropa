@@ -5,7 +5,7 @@
         }
         
         body {
-            font-family: 'Verdana';
+            font-family: 'open sans';
         }
         
         .contenedor {
@@ -83,6 +83,7 @@
         
         main .contenedor-hombre {
             padding: 30px 0 60px 0;
+            padding-bottom: 200px;
         }
         
         .contenedor-ropa-hombre {
@@ -217,21 +218,29 @@
         
         .nosotros_contenedor {
             text-align: center;
-            color: #642a73;
+            color: #fff;
         }
         
         .cards {
             display: flex;
             justify-content: space-evenly;
+            padding-bottom: 50px;
         }
         
         .cards .card {
-            background: #798606b6;
-            display: flex;
-            width: 46%;
+            background: #1a2a6c;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, hsla(41, 98%, 58%, 0.678), hsla(0, 70%, 41%, 0.658), hsla(228, 61%, 26%, 0.637));
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, hsla(41, 98%, 58%, 0.637), hsla(0, 70%, 41%, 0.658), hsla(228, 61%, 26%, 0.658));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-size: cover;
+            background-attachment: fixed;
+            display: flexbox;
+            width: 45%;
             height: auto;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: center;
             border-radius: 5px;
             box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
         }
@@ -330,14 +339,8 @@
         }
         /*formulario*/
         
-        .container {
-            width: 500px;
-            height: 600px;
-            margin: 0px auto;
-        }
-        
         .formulario {
-            display: grid;
+            display: flexbox;
             grid-template-columns: 5fr 5fr;
             gap: 20px;
             align-items: center;
@@ -469,9 +472,28 @@
         .formulario__grupo-incorrecto .formulario__input {
             border: 3px solid #bb2929;
         }
+        /*mapa*/
+        
+        .mapa_contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        
+        .mapa_tit {
+            text-align: center;
+        }
+        
+        .carousel-inner img {
+            width: 50%;
+            height: 50%;
+        }
         /* ----- -----  Mediaqueries ----- ----- */
         
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 900px) {
             .formulario {
                 grid-template-columns: 1fr;
             }
@@ -519,25 +541,39 @@
             .cards .card:first-child {
                 margin-bottom: 30px;
             }
-            /* servicios */
+            /* servicios 
             .contacto-cont {
                 justify-content: center;
                 flex-direction: column;
             }
+
             .contacto-ind {
                 width: 100%;
                 text-align: center;
             }
+
             .contacto-ind:nth-child(1),
             .contacto-ind:nth-child(2) {
                 margin-bottom: 60px;
             }
+
             .contacto-ind img {
                 width: 90%;
+            }*/
+            .formulario {
+                grid-template-columns: 1fr;
+            }
+            .formulario__grupo-terminos,
+            .formulario__mensaje,
+            .formulario__grupo-btn-enviar {
+                grid-column: 1;
+            }
+            .formulario__btn {
+                width: 100%;
             }
         }
         
-        @media screen and (max-width:500px) {
+        @media screen and (max-width:400px) {
             nav {
                 text-align: center;
                 padding: 30px 0 0 0;
@@ -601,5 +637,39 @@
                 margin: 50px;
                 align-items: center;
                 background-color: #fff;
+            }
+            .mapa_contenedor {
+                display: flex;
+                width: 90%;
+            }
+            .formulario {
+                grid-template-columns: 1fr;
+                display: flex;
+                width: 80%;
+            }
+            .formulario__grupo-terminos,
+            .formulario__mensaje,
+            .formulario__grupo-btn-enviar {
+                grid-column: 1;
+            }
+            .formulario__btn {
+                display: flex;
+                width: 100%;
+            }
+            .contacto-cont {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .contacto-ind {
+                width: 100%;
+                text-align: center;
+                font-size: small;
+            }
+            .contacto-ind:nth-child(1),
+            .contacto-ind:nth-child(2) {
+                margin-bottom: 60px;
+            }
+            .contacto-ind img {
+                width: 90%;
             }
         }
