@@ -5,7 +5,7 @@
         }
         
         body {
-            font-family: 'open sans';
+            font-family: 'Verdana';
         }
         
         .contenedor {
@@ -329,6 +329,12 @@
             background-color: #fff;
         }
         /*formulario*/
+        
+        .container {
+            width: 500px;
+            height: 600px;
+            margin: 0px auto;
+        }
         
         .formulario {
             display: grid;
