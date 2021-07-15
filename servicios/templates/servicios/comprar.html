@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>VyniL Chile</title>
+    <link rel="shortcut icon" href="{% static 'vynilApp/imagenes/v.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'vynilApp/css/Style.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home'%}">Inicio</a>
+            <a href="{% url 'hombre'%}" target="_blank">Hombre</a>
+            <a href="{% url 'mujer'%}" target="_blank">Mujer</a>
+            <a href="{% url 'comprar'%}">Comprar</a>
+            <a href="{% url 'ayuda'%}">Contacto</a>
+            <a href="{% url 'formulario'%}">Registrate</a>
+        </nav>
+        <section class="textos-header">
+            <h1>VyniL</h1>
+            <h2>Tú ropa favorita</h2>
+
+            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: rgb(247, 247, 247);"></path>
+            </svg></div>
+    </header>
+
+    {% for Articulos in comprar %}
+    <section id=a class=" nosotros_contenedorr">
+        <h2>{{Articulos.nombre}} </h2>
+        <div class="cardss">
+            <div class="cardd">
+                <img src="{{Articulos.imagen.url}}" alt="">
+                <div class="conenido-textos-cardd">
+                    <h4>{{Articulos.seccion}}</h4>
+                    <p>{{Articulos.precio}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<img src="{{Articulos.imagen.url}}">
+
+        <p>{{Articulos.seccion}}</p>
+        <p>{{Articulos.precio}}</p>-->
+
+
+
+    {% endfor %}
+
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <a href="ayuda.html">Ayuda</a>
+                <p>Lorem ipsum dolor sit amet.</p>
+
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; Vynil || Studio</h2>
+    </footer>
+
+
+    <script src="{% static 'vynilApp/js/formulario.js'%}"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

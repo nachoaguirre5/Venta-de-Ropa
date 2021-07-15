@@ -1,0 +1,77 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'vynilApp/css/Style.css'%}">
+    <link rel="shortcut icon" href="{% static 'vynilApp/imagenes/v.png'%}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <title>Seccion hombre || Vynil</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{%url 'home'%}">Inicio</a>
+            <a href="hombre.html" target="_blank">Hombre</a>
+            <a href="mujer.html" target="_blank">Mujer</a>
+        </nav>
+        <section class="textos-header">
+            <h1>VyniL</h1>
+            <h2>Sección hombre</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: rgb(247, 247, 247);"></path>
+            </svg></div>
+    </header>
+    <main>
+        <section class="catalogo">
+            <div class="contenedor">
+                <h2 class="titulo">Catálogo</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port2">
+                        <img src="{% static 'vynilApp/imagenes/negro.jpg'%}" alt="">
+                        <div class="hover-galeria2">
+                            <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
+                            <a href="hombre.html" target="_blank">Poleron // Poleras</a>
+                        </div>
+                    </div>
+                    <div class="imagen-port2">
+                        <img src="{% static 'vynilApp/imagenes/panta.jpg'%}" alt="">
+                        <div class="hover-galeria2">
+                            <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
+                            <a href="hombre.html" target="_blank">Pantalones</a>
+                        </div>
+                    </div>
+                    <div class="imagen-port2">
+                        <img src="{% static 'vynilApp/imagenes/cal.jpg'%}" alt="">
+                        <div class="hover-galeria2">
+                            <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
+                            <a href="hombre.html" target="_blank">Calcetines</a>
+                        </div>
+                    </div>
+                    <div class="imagen-port2">
+                        <img src="{% static 'vynilApp/imagenes/zapaa.jpg'%}" alt="">
+                        <div class="hover-galeria2">
+                            <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
+                            <a href="{%url 'hombre'%}" target="_blank">Zapatillas</a>
+                        </div>
+                    </div>
+    </main>
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <a href="ayuda.html">Ayuda</a>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; Vynil || Studio</h2>
+    </footer>
+</body>
+
+</html>

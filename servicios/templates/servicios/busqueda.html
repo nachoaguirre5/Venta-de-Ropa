@@ -1,0 +1,49 @@
+{% load static %}
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="{% static 'formulario/css/style.css' %}">
+    </head>
+
+    <body>
+        <section class="container-fluid">
+            <table border="1">Lista de Vehículos
+                <tr>
+                    <th>patente</th>
+                    <th>marca</th>
+                    <th>modelo</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+                {% for veh in vehiculos%}
+                <tr>
+                    <td>{{{Articulos.nombre}}}</td>
+                    <td>{{{Articulos.precio}}}}</td>
+                    <td>{{{{Articulos.seccion}}}}</td>
+                    <td>
+                        <a href="{% url 'ingresarRopa' Articulos.nombre %}"><img src="{% static 'f/img/modificar.png' %}" alt=""></a>
+                    </td>
+                    <td>
+                        <a href="{% url 'form_del_articulo' Articulos.nombre %}"><img src="{% static 'formulario/img/borrar.png' %}" alt=""></a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </table>
+            <div>
+                <a class="mas" href="{% url 'form_articulo' %}">+</a>
+            </div>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+        <script type="text/javascript" src="{% static 'formulario/js/script.js' %}"></script>
+    </body>
+
+    </html>
