@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>VyniL Chile</title>
+    <link rel="shortcut icon" href="{% static 'vynilApp/imagenes/v.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'vynilApp/css/Style.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home'%}">Inicio</a>
+            <a href="{% url 'hombre'%}" target="_blank">Hombre</a>
+            <a href="{% url 'mujer'%}" target="_blank">Mujer</a>
+            <a href="{% url 'comprar'%}">Comprar</a>
+            <a href="{% url 'ayuda'%}">Contacto</a>
+            <a href="{% url 'registro'%}">Registrate</a> {% if user.is_authenticated %}
+
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+            </li>
+
+            <a href="#">Hola {{user.username}}</a>
+            </li>
+
+            {% for auth in backends.associated %} {% if auth.provider == 'facebook' %}
+            <img src="{{ auth.extra_data.picture.data.url }}" alt="" width="50" height="50"> {% endif %} {% endfor %} {% else %}
+
+            <a href="{% url 'login' %}">iniciar sesión</a> {% endif%}
+        </nav>
+        <section class="textos-header">
+            <h1>VyniL</h1>
+            <h2>Tú ropa favorita</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: rgb(247, 247, 247);"></path>
+            </svg></div>
+
+        <br><br><br><br><br><br>
+
+        <h2>se cancelo </h2>
