@@ -20,12 +20,10 @@
     <header>
         <nav>
             <a href="{% url 'home'%}">Inicio</a>
-            <a href="{% url 'hombre'%}" target="_blank">Hombre</a>
-            <a href="{% url 'mujer'%}" target="_blank">Mujer</a>
-
-            <a href="{% url 'registro'%}">Registrate</a> {% if user.is_authenticated %}
-            <a href="{% url 'agregar_productos'%}">Agregar</a> {% if perms.vynilApp.view_producto %}
-            <a href="{% url 'listar_productos'%}">Listado</a> {% endif %}
+            <a href="{% url 'hombre'%}">Hombre</a>
+            <a href="{% url 'registro'%}">Registrate</a> {% if perms.vynilApp.add_producto %}
+            <a href="{% url 'agregar_productos'%}">Agregar</a> {% if user.is_authenticated %}
+            <a href="{% url 'listar_productos'%}">Productos</a> {% endif %}
             <a href="{% url 'logout' %}">Cerrar sesión</a>
             </li>
 
@@ -74,32 +72,26 @@
 
                         </div>
                     </div>
-                    <div class="imagen-port">
-                        <img src="{% static 'vynilApp/imagenes/P3.jpg'%}" alt="">
-                        <div class="hover-galeria">
-                            <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
-                            <a href="{% url 'mujer'%}" target="_blank">Mujer</a>
-                        </div>
-                    </div>
+
                     <div class="imagen-port">
                         <img src="{% static 'vynilApp/imagenes/niño.jpg'%}" alt="">
                         <div class="hover-galeria">
                             <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
-                            <a href="{% url 'niño'%}" target="_blank">Niño</a>
+
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="{% static 'vynilApp/imagenes/zapa.jpg'%}" alt="">
                         <div class="hover-galeria">
                             <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
-                            <a href="{% url 'zapatillas'%}" target="_blank">zapatillas</a>
+
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="{% static 'vynilApp/imagenes/gorro.jpg'%}" alt="">
                         <div class="hover-galeria">
                             <img src="{% static 'vynilApp/imagenes/icono1.png'%}" alt="">
-                            <a href="{% url 'accesorios'%}" target="_blank">Accesorioss</a>
+
         </section>
         <section id=a class=" nosotros_contenedor">
             <h2>Acerca de nosotros </h2>
@@ -159,16 +151,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    {% if messages %} {% for m in messages %}
-    <script>
-        swal.fire({
-            "tittle": "Felecidades",
-            "text": "{{m}}",
-            "icon": "success"
-        })
-    </script>
-    {% endfor %} {%endif%}
 
 </body>
 

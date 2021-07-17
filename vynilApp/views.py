@@ -15,7 +15,15 @@ from .serializers import ProductoSerializer
 
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
-    serializers_class = ProductoSerializer
+    serializer_class = ProductoSerializer
+    def get_queryset(self):
+        productos = Producto.objects.all()
+        nombre= self.request.GET.get('nombre')
+
+        if nombre:
+            productos= productos.filter(nombre__contains=nombre)
+        return productos
+    
 
 
 
@@ -75,7 +83,7 @@ def agregar_producto(request):
             data["form"]= formulario    
     return render(request, 'vynilApp/producto/agregar.html', data)
 
-@permission_required('app.view_producto')
+
 def listar_productos(request):
     productos= Producto.objects.all()
     page = request.GET.get('page', 1)
