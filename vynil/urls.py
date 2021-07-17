@@ -22,5 +22,7 @@ urlpatterns = [
     path('servicios/', include('servicios.urls')),
     path('', include('vynilApp.urls')),
     path('api/',include('rest_tienda.urls')),
-    path('register/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('social-auth/', include('social_django.urls', namespace="social")),
 ]
